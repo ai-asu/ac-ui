@@ -1,0 +1,204 @@
+@import "./common/config";
+@import "./var/var";
+
+// 苹方PingFang
+@font-face {
+  font-display: $--font-display;
+  font-family: "PingFangBold";
+  src: url("./fonts/PingFang/PingFang Bold.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "PingFangMedium";
+  src: url("./fonts/PingFang/PingFang Medium.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "PingFangRegular";
+  src: url("./fonts/PingFang/PingFang Regular.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "PingFangExtraLight";
+  src: url("./fonts/PingFang/PingFang ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "PingFangHeavy";
+  src: url("./fonts/PingFang/PingFang Heavy.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "PingFangLight";
+  src: url("./fonts/PingFang/PingFang Light.ttf") format("truetype");
+}
+// Segoeui
+@font-face {
+  font-display: $--font-display;
+  font-family: "SegoeuiRegular";
+  src: url("./fonts/Segoe/segoeui.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "SegoeuiBold";
+  src: url("./fonts/Segoe/segoeuib.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "SegoeuiLight";
+  src: url("./fonts/Segoe/segoeuil.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "SegoeuiSemibold";
+  src: url("./fonts/Segoe/segoeuisb.ttf") format("truetype");
+}
+// Arial
+@font-face {
+  font-display: $--font-display;
+  font-family: "ArialRegular";
+  src: url("./fonts/Arial/arial.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "ArialBold";
+  src: url("./fonts/Arial/arialbd.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "ArialItalic";
+  src: url("./fonts/Arial/ariali.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "ArialBoldItalic";
+  src: url("./fonts/Arial/arialbi.ttf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "ArialBlack";
+  src: url("./fonts/Arial/arialblk.ttf") format("truetype");
+}
+// Din
+@font-face {
+  font-display: $--font-display;
+  font-family: "DINLight";
+  src: url("./fonts/DIN/DIN-Light.otf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "DINMedium";
+  src: url("./fonts/DIN/DIN-Medium.otf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "DINBold";
+  src: url("./fonts/DIN/DIN-Bold.otf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "DINBlack";
+  src: url("./fonts/DIN/DIN-Black.otf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "DINCondLight";
+  src: url("./fonts/DIN/DINCond-Light.otf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "DINCondRegular";
+  src: url("./fonts/DIN/DINCond-Regular.otf") format("truetype");
+}
+@font-face {
+  font-display: $--font-display;
+  font-family: "DINCondMedium";
+  src: url("./fonts/DIN/DINCond-Medium.otf") format("truetype");
+}
+// 字体风格
+.#{$namespace}-fontFamily-normal {
+  font-family: "PingFangRegular";
+}
+.#{$namespace}-fontFamily-medium {
+  font-family: "PingFangMedium";
+}
+.#{$namespace}-fontFamily-bold {
+  font-family: "PingFangBold";
+}
+.#{$namespace}-fontFamily-PingFangExtraLight {
+  font-family: "PingFangExtraLight";
+}
+.#{$namespace}-fontFamily-PingFangHeavy {
+  font-family: "PingFangHeavy";
+}
+.#{$namespace}-fontFamily-PingFangLight {
+  font-family: "PingFangLight";
+}
+// Segoeui
+.#{$namespace}-fontFamily-SegoeuiRegular {
+  font-family: "SegoeuiRegular";
+}
+.#{$namespace}-fontFamily-SegoeuiBold {
+  font-family: "SegoeuiBold";
+}
+.#{$namespace}-fontFamily-SegoeuiLight {
+  font-family: "SegoeuiLight";
+}
+.#{$namespace}-fontFamily-SegoeuiSemibold {
+  font-family: "SegoeuiSemibold";
+}
+// Arial
+.#{$namespace}-fontFamily-ArialRegular {
+  font-family: "ArialRegular";
+}
+.#{$namespace}-fontFamily-ArialBold {
+  font-family: "ArialBold";
+}
+.#{$namespace}-fontFamily-ArialItalic {
+  font-family: "ArialItalic";
+}
+.#{$namespace}-fontFamily-ArialBoldItalic {
+  font-family: "ArialBoldItalic";
+}
+.#{$namespace}-fontFamily-ArialBlack {
+  font-family: "ArialBlack";
+}
+// Din
+.#{$namespace}-fontFamily-DINLight {
+  font-family: "DINLight";
+}
+.#{$namespace}-fontFamily-DINMedium {
+  font-family: "DINMedium";
+}
+.#{$namespace}-fontFamily-DINBold {
+  font-family: "DINBold";
+}
+.#{$namespace}-fontFamily-DINBlack {
+  font-family: "DINBlack";
+}
+.#{$namespace}-fontFamily-DINCondLight {
+  font-family: "DINCondLight";
+}
+.#{$namespace}-fontFamily-DINCondRegular {
+  font-family: "DINCondRegular";
+}
+.#{$namespace}-fontFamily-DINCondMedium {
+  font-family: "DINCondMedium";
+}
+
+// 字体大小
+.#{$namespace}-fontSize-small {
+  font-size: 14px;
+}
+.#{$namespace}-fontSize-normal {
+  font-size: 16px;
+}
+.#{$namespace}-fontSize-medium {
+  font-size: 18px;
+}
+.#{$namespace}-fontSize-large {
+  font-size: 20px;
+}
+.#{$namespace}-fontSize-larger {
+  font-size: 24px;
+}

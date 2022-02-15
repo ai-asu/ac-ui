@@ -1,0 +1,143 @@
+@import "mixins/mixins";
+@import "mixins/utils";
+@import "./var/var";
+
+@include b(select) {
+  display: inline-block;
+  position: relative;
+  line-height: $--input-height;
+  width: $--select-medium-width;
+  border-radius: 2px;
+
+  @include e(popper) {
+    &.#{$namespace}-popper {
+      background: $--select-dropdown-background;
+      border-radius: 2px;
+
+      &.#{$namespace}-select--small__popper {
+        .#{$namespace}-select-dropdown__item {
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include m(small) {
+    width: $--select-small-width;
+    line-height: $--input-height;
+  }
+
+  @include m(medium) {
+    width: $--select-medium-width;
+    line-height: $--input-height;
+  }
+
+  .#{$namespace}-input {
+    width: 100%;
+
+    .#{$namespace}-input__inner {
+      border: none;
+      padding-left: 0;
+      padding-right: 25px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: $--select-font-size;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    .#{$namespace}-input__suffix {
+      right: 0;
+    }
+
+    & .#{$namespace}-select__caret {
+      color: $--select-input-color;
+      font-size: $--select-input-font-size;
+      transition: transform 0.3s;
+      transform: rotateZ(180deg);
+      cursor: pointer;
+
+      @include when(reverse) {
+        transform: rotateZ(0deg);
+      }
+    }
+
+    &.is-disabled {
+      & .#{$namespace}-input__inner {
+        cursor: not-allowed;
+
+        &:hover {
+          border-color: $--select-disabled-border;
+        }
+      }
+    }
+
+    &.is-focus .#{$namespace}-input__inner {
+      border-color: #00d5ff;
+    }
+  }
+
+  &.is-border {
+    .#{$namespace}-input__inner {
+      border: 1px solid #0387a1;
+      padding-left: 12px;
+    }
+  }
+
+  &:hover {
+    .#{$namespace}-input__inner {
+      border-color: #00d5ff;
+    }
+  }
+}
+
+@include b(select-dropdown) {
+  z-index: #{$--index-top + 1};
+  border-radius: $--border-radius-base;
+  box-sizing: border-box;
+
+  @include e(item) {
+    font-size: $--select-font-size;
+    padding: 0 10px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $--select-option-color;
+    height: $--select-option-height;
+    line-height: $--select-option-height;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    @include when(disabled) {
+      color: $--select-option-disabled-color;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: $--select-option-disabled-background;
+      }
+    }
+
+    &.selected,
+    &.hover,
+    &:hover {
+      color: $--select-option-selected-font-color;
+      background-color: $--select-option-hover-background;
+    }
+  }
+
+  .#{$namespace}-scrollbar.is-empty .#{$namespace}-select-dropdown__list {
+    padding: 0;
+  }
+}
+
+@include b(select-dropdown__wrap) {
+  max-height: $--select-dropdown-max-height;
+}
+
+@include b(select-dropdown__list) {
+  list-style: none;
+  padding: $--select-dropdown-padding;
+  margin: 0;
+  box-sizing: border-box;
+}

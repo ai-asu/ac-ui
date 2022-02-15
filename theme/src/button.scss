@@ -1,0 +1,99 @@
+@import "./var/var";
+@import "./common/config";
+@import "mixins/button";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(button) {
+  display: inline-block;
+  line-height: 36px;
+  height: 36px;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: $--button-default-background-color;
+  border: 1px solid $--button-default-border-color;
+  border-radius: $--button-border-radius;
+  color: $--button-default-font-color;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  font-weight: $--button-font-weight;
+  padding: $--button-padding;
+  font-size: $--button-font-size;
+  @include utils-user-select(none);
+  & + & {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $--button-default-active-font-color;
+    border-color: $--button-default-active-border-color;
+    background-color: $--button-default-active-background-color;
+  }
+  &:disabled {
+    color: $--button-default-disabled-font-color;
+    border-color: $--button-default-disabled-border-color;
+    background-color: $--button-default-disabled-background-color;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  & [class*="#{$namespace}-icon-"] {
+    & + span {
+      margin-left: 5px;
+    }
+  }
+
+  @include m(handle) {
+    @include button-variant(
+      $--button-handle-font-color,
+      $--button-handle-background-color,
+      $--button-handle-border-color,
+      $--button-handle-active-font-color,
+      $--button-handle-active-background-color,
+      $--button-handle-active-border-color,
+      $--button-handle-disabled-font-color,
+      $--button-handle-disabled-background-color,
+      $--button-handle-disabled-border-color
+    );
+  }
+  @include m(text) {
+    @include button-variant(
+      $--button-text-font-color,
+      $--button-text-background-color,
+      $--button-text-border-color,
+      $--button-text-active-font-color,
+      $--button-text-active-background-color,
+      $--button-text-active-border-color,
+      $--button-text-disabled-font-color,
+      $--button-text-disabled-background-color,
+      $--button-text-disabled-border-color
+    );
+  }
+  @include m(special) {
+    @include button-variant-image(
+      $--button-handle-font-color,
+      url('./images/btn/btn_v1_1_1.png'),
+      $--button-handle-active-font-color,
+      url('./images/btn/btn_v1_1_2.png'),
+      $--button-handle-disabled-font-color,
+      url('./images/btn/btn_v1_1_3.png'),
+    );
+  }
+  @include m(image) {
+    @include button-variant-image(
+      $--button-image-font-color,
+      url('./images/btn/btn_v1_2_1.png'),
+      $--button-image-active-font-color,
+      url('./images/btn/btn_v1_2_2.png'),
+      $--button-image-disabled-font-color,
+      url('./images/btn/btn_v1_2_3.png'),
+    );
+  }
+}

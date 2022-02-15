@@ -1,0 +1,39 @@
+@import "reset";
+@import "common";
+
+@import "basic/icon";
+@import "basic/color";
+@import "basic/typography";
+
+@import "charts/index";
+@import "form/index";
+
+.demo-table {
+  .source {
+    background-color: #000000;
+  }
+}
+
+.demo-radio,
+.demo-checkbox,
+.demo-input,
+.demo-select,
+.demo-switch,
+.demo-button,
+.demo-title,
+.demo-tabs,
+.demo-pagination {
+  .source {
+    background-color: #081113;
+  }
+}
+
+.demo-tabs {
+  .source {
+    color: #ffffff;
+  }
+}
+
+.ac-title + .ac-title {
+  margin-top: 10px;
+}

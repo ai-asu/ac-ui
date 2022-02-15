@@ -1,0 +1,187 @@
+@import "mixins/mixins";
+@import "mixins/utils";
+@import "./var/var";
+
+@include b(pagination) {
+  white-space: nowrap;
+  padding: 2px 5px;
+  color: $--pagination-font-color;
+  font-weight: bold;
+  @include utils-clearfix;
+
+  span:not([class*="suffix"]),
+  button {
+    display: inline-block;
+    font-size: $--pagination-font-size;
+    min-width: $--pagination-button-width;
+    height: $--pagination-button-height;
+    line-height: $--pagination-button-height;
+    vertical-align: middle;
+  }
+
+  .#{$namespace}-input__inner {
+    text-align: center;
+    -moz-appearance: textfield;
+    line-height: normal;
+  }
+
+  .#{$namespace}-select .#{$namespace}-input {
+    width: 100px;
+    margin: 0 5px;
+
+    .#{$namespace}-input__inner {
+      padding-right: 25px;
+      border-radius: $--pagination-border-radius;
+    }
+  }
+
+  .btn-prev,
+  .btn-next {
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    color: $--pagination-button-color;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.45);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: $--pagination-hover-color;
+      border-color: $--pagination-hover-color;
+    }
+
+    &:disabled {
+      color: $--pagination-button-disabled-color;
+      background-color: $--pagination-button-disabled-background-color;
+      cursor: not-allowed;
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    .#{$namespace}-icon {
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  .#{$namespace}-pager li.disabled {
+    color: $--color-text-placeholder;
+    cursor: not-allowed;
+  }
+
+  @include e(total) {
+    margin-right: 10px;
+    font-weight: normal;
+    color: $--pagination-total-font-color;
+  }
+
+  @include e(jump) {
+    margin-left: 24px;
+    font-weight: normal;
+    color: $--pagination-jump-font-color;
+
+    .#{$namespace}-input__inner {
+      padding: 0 3px;
+      background-color: transparent;
+      border-color: rgba(255,255,255,0.45);
+    }
+  }
+
+  @include e(rightwrapper) {
+    float: right;
+  }
+
+  @include e(editor) {
+    line-height: 18px;
+    padding: 0 2px;
+    height: $--pagination-button-height;
+
+    text-align: center;
+    margin: 0 2px;
+    box-sizing: border-box;
+    border-radius: $--pagination-border-radius;
+
+    &.#{$namespace}-input {
+      width: 50px;
+    }
+
+    &.#{$namespace}-input .#{$namespace}-input__inner {
+      height: $--pagination-button-height;
+    }
+
+    .#{$namespace}-input__inner::-webkit-inner-spin-button,
+    .#{$namespace}-input__inner::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+@include b(pager) {
+  user-select: none;
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 0 4px;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: $--pagination-font-size;
+    min-width: $--pagination-button-width;
+    height: $--pagination-button-height;
+    line-height: $--pagination-button-height;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 5px;
+    background-color: transparent;
+    color: $--pagination-pager-color;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.45);
+
+    &.disabled {
+      color: $--color-text-placeholder;
+    }
+
+    &.btn-quicknext,
+    &.btn-quickprev {
+      color: $--pagination-button-color;
+
+      &.disabled {
+        color: $--color-text-placeholder;
+      }
+    }
+
+    &.btn-quickprev:hover,
+    &.btn-quicknext:hover {
+      cursor: pointer;
+    }
+
+    &:hover,
+    &.active {
+      color: $--pagination-hover-color;
+      border-color: $--pagination-hover-color;
+    }
+    &.active {
+      cursor: default;
+    }
+
+    &:not(.disabled) {
+      &:hover,
+      &.active {
+        background-color: #002B33;
+        color: $--pagination-hover-color;
+      }
+    }
+  }
+}

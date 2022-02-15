@@ -1,0 +1,10 @@
+ul.demo-typography {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  li {
+    div {
+      line-height: 22px;
+    }
+  }
+}

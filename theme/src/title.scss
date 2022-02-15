@@ -1,0 +1,76 @@
+@import "mixins/mixins";
+@import "./var/var";
+
+@include b(title) {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  position: relative;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  height: 28px;
+  line-height: 28px;
+  font-size: $--font-size-medium;
+  &:after {
+    content: ' ';
+    width: 2px;
+    height: 12px;
+    background: #00D5FF;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    display: none;
+  }
+
+  @include e(inner) {
+
+  }
+
+  @include e(icon) {
+    font-size: $--font-size-medium;
+    vertical-align: middle;
+  }
+
+  @include e(prefix) {
+    color: #EAECFF;
+    margin-right: 7px;
+  }
+
+  @include e(suffix) {
+    position: absolute;
+    right: 0;
+  }
+
+  @include m(spacer) {
+    &:after {
+      display: block;
+    }
+  }
+
+  @include m(medium) {
+    .#{$namespace}-title__inner,
+    .#{$namespace}-title__icon,
+    .#{$namespace}-title__prefix,
+    .#{$namespace}-title__suffix {
+      font-size: $--font-size-medium;
+    }
+  }
+
+  @include m(small) {
+    .#{$namespace}-title__inner,
+    .#{$namespace}-title__icon,
+    .#{$namespace}-title__prefix,
+    .#{$namespace}-title__suffix {
+      font-size: $--font-size-base;
+    }
+  }
+
+  @include m(mini) {
+    .#{$namespace}-title__inner,
+    .#{$namespace}-title__icon,
+    .#{$namespace}-title__prefix,
+    .#{$namespace}-title__suffix {
+      font-size: $--font-size-small;
+    }
+  }
+}

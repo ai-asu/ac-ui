@@ -1,0 +1,138 @@
+@import "mixins/mixins";
+@import "./var/var";
+
+@include b(switch) {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-size: $--font-size-small;
+  line-height: $--switch-medium-height;
+  height: $--switch-medium-height;
+  vertical-align: middle;
+
+  @include when(disabled) {
+    & .#{$namespace}-switch__core,
+    & .#{$namespace}-switch__label {
+      cursor: not-allowed;
+    }
+  }
+
+  @include e(label) {
+    transition: 0.2s;
+    height: $--switch-medium-height;
+    display: inline-block;
+    font-size: $--font-size-small;
+    line-height: $--switch-medium-height;
+    font-weight: 500;
+    cursor: pointer;
+    vertical-align: middle;
+    color: $--switch-font-color;
+
+    @include m(left) {
+      margin-right: 10px;
+    }
+    @include m(right) {
+      margin-left: 10px;
+    }
+    & * {
+      line-height: 1;
+      font-size: $--font-size-small;
+      display: inline-block;
+    }
+  }
+
+  @include e(input) {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+  }
+
+  @include e(core) {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    width: $--switch-width;
+    height: $--switch-medium-height;
+    border: 1px solid $--switch-off-color;
+    outline: none;
+    border-radius: $--switch-core-border-radius;
+    box-sizing: border-box;
+    background: $--switch-off-color;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+    vertical-align: middle;
+
+    .#{$namespace}-switch__action {
+      position: absolute;
+      top: 0px;
+      left: 1px;
+      border-radius: $--border-radius-circle;
+      transition: all 0.3s;
+      width: $--switch-small-button-size;
+      height: $--switch-small-button-size;
+      background-color: $--switch-off-action-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @include when(checked) {
+    .#{$namespace}-switch__core {
+      border-color: $--switch-on-color;
+      background-color: $--switch-on-color;
+      .#{$namespace}-switch__action {
+        left: 100%;
+        margin-left: -$--switch-small-button-size - 1px;
+        background-color: $--switch-on-action-color;
+      }
+    }
+  }
+
+  @include when(disabled) {
+    opacity: 0.6;
+  }
+
+  @include m(wide) {
+    .#{$namespace}-switch__label {
+      &.#{$namespace}-switch__label--left {
+        span {
+          left: 10px;
+        }
+      }
+      &.#{$namespace}-switch__label--right {
+        span {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  @include m(medium) {
+    & .#{$namespace}-switch__core {
+      height: $--switch-medium-height;
+    }
+    .#{$namespace}-switch__action {
+      width: $--switch-small-button-size;
+      height: $--switch-small-button-size;
+    }
+  }
+  @include m(small) {
+    & .#{$namespace}-switch__core {
+      height: $--switch-small-height;
+    }
+    .#{$namespace}-switch__action {
+      width: $--switch-medium-button-size;
+      height: $--switch-medium-button-size;
+      top: -7px;
+      left: -2px;
+    }
+  }
+
+  & .label-fade-enter,
+  & .label-fade-leave-active {
+    opacity: 0;
+  }
+}

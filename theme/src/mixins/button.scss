@@ -1,0 +1,71 @@
+@mixin button-variant(
+  $color,
+  $background-color,
+  $border-color,
+  $active-color,
+  $active-background-color,
+  $active-border-color,
+  $disabled-color,
+  $disabled-background-color,
+  $disabled-border-color
+) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $active-color;
+    background-color: $active-background-color;
+    border-color: $active-border-color;
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $disabled-color;
+      background-color: $disabled-background-color;
+      border-color: $disabled-border-color;
+    }
+  }
+}
+@mixin button-variant-image(
+  $color,
+  $background,
+  $active-color,
+  $active-background,
+  $disabled-color,
+  $disabled-background,
+) {
+  color: $color;
+  background-image: $background;
+  border-color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $active-color;
+    background-image: $active-background;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $disabled-color;
+      background-image: $disabled-background;
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
+}

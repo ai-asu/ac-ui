@@ -1,0 +1,72 @@
+@import "./var/color";
+@import "./common/config";
+
+@for $i from 1 through 10 {
+  // color
+  .#{$namespace}-color-red-#{$i} {
+    color: nth($redList, $i);
+  }
+  .#{$namespace}-color-yellow-#{$i} {
+    color: nth($yellowList, $i);
+  }
+  .#{$namespace}-color-green-#{$i} {
+    color: nth($greenList, $i);
+  }
+  .#{$namespace}-color-teal-#{$i} {
+    color: nth($tealList, $i);
+  }
+  .#{$namespace}-color-cyan-#{$i} {
+    color: nth($cyanList, $i);
+  }
+  .#{$namespace}-color-blue-#{$i} {
+    color: nth($blueList, $i);
+  }
+  .#{$namespace}-color-blue-purple-#{$i} {
+    color: nth($blue-purpleList, $i);
+  }
+  .#{$namespace}-color-black-gray-#{$i} {
+    color: nth($black-grayList, $i);
+  }
+  // background-color
+  .#{$namespace}-bgColor-red-#{$i} {
+    background-color: nth($redList, $i);
+  }
+  .#{$namespace}-bgColor-yellow-#{$i} {
+    background-color: nth($yellowList, $i);
+  }
+  .#{$namespace}-bgColor-green-#{$i} {
+    background-color: nth($greenList, $i);
+  }
+  .#{$namespace}-bgColor-teal-#{$i} {
+    background-color: nth($tealList, $i);
+  }
+  .#{$namespace}-bgColor-cyan-#{$i} {
+    background-color: nth($cyanList, $i);
+  }
+  .#{$namespace}-bgColor-blue-#{$i} {
+    background-color: nth($blueList, $i);
+  }
+  .#{$namespace}-bgColor-blue-purple-#{$i} {
+    background-color: nth($blue-purpleList, $i);
+  }
+  .#{$namespace}-bgColor-black-gray-#{$i} {
+    background-color: nth($black-grayList, $i);
+  }
+}
+
+// 渐变色
+@mixin gradientColor($deg, $c1, $c2) {
+  background: linear-gradient($deg + deg, $c1, $c2);
+}
+.#{$namespace}-bgColor-gradient-1 {
+  @include gradientColor(90, transparent, #229fe2);
+}
+.#{$namespace}-bgColor-gradient-2 {
+  @include gradientColor(90, transparent, #3194f7);
+}
+.#{$namespace}-bgColor-gradient-3 {
+  @include gradientColor(90, transparent, #4466f4);
+}
+.#{$namespace}-bgColor-gradient-4 {
+  @include gradientColor(90, transparent, rgba(#4bc6c1, 0.6));
+}

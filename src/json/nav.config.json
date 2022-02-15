@@ -1,0 +1,181 @@
+[
+  {
+    "name": "更新日志",
+    "path": "/changelog"
+  },
+  {
+    "name": "开发指南",
+    "children": [
+      {
+        "path": "/installation",
+        "name": "安装"
+      },
+      {
+        "path": "/quickstart",
+        "name": "快速上手"
+      }
+    ]
+  },
+  {
+    "name": "组件",
+    "groups": [
+      {
+        "groupName": "Basic",
+        "list": [
+          {
+            "path": "/color",
+            "name": "Color 色彩",
+            "isComplete": true
+          },
+          {
+            "path": "/typography",
+            "name": "Typography 字体",
+            "isComplete": true
+          },
+          {
+            "path": "/icon",
+            "name": "Icon 图标",
+            "isComplete": true
+          },
+          {
+            "path": "/button",
+            "name": "Button 按钮",
+            "isComplete": true
+          }
+        ]
+      },
+      {
+        "groupName": "Form",
+        "list": [
+          {
+            "path": "/radio",
+            "name": "Radio 单选框",
+            "isComplete": true
+          },
+          {
+            "path": "/checkbox",
+            "name": "Checkbox 多选框",
+            "isComplete": true
+          },
+          {
+            "path": "/input",
+            "name": "Input 输入框",
+            "isComplete": true
+          },
+          {
+            "path": "/select",
+            "name": "Select 选择器",
+            "isComplete": true
+          },
+          {
+            "path": "/switch",
+            "name": "Switch 开关",
+            "isComplete": true
+          },
+          {
+            "path": "/datetime-picker",
+            "name": "DateTimePicker 日期时间选择器"
+          }
+        ]
+      },
+      {
+        "groupName": "Data",
+        "list": [
+          {
+            "path": "/table",
+            "name": "Table 表格",
+            "isComplete": true
+          },
+          {
+            "path": "/pagination",
+            "name": "Pagination 分页",
+            "isComplete": true
+          }
+        ]
+      },
+      {
+        "groupName": "Notice",
+        "list": [
+          {
+            "path": "/message",
+            "name": "Message 消息提示",
+            "isComplete": true
+          },
+          {
+            "path": "/message-box",
+            "name": "MessageBox 弹框",
+            "isComplete": true
+          }
+        ]
+      },
+      {
+        "groupName": "Navigation",
+        "list": [
+          {
+            "path": "/title",
+            "name": "Title 标题",
+            "isComplete": true
+          },
+          {
+            "path": "/tabs",
+            "name": "Tabs 标签页",
+            "isComplete": true
+          }
+        ]
+      },
+      {
+        "groupName": "Others",
+        "list": [
+          {
+            "path": "/scrollbar",
+            "name": "Scrollbar 滚动条",
+            "isComplete": true
+          },
+          {
+            "path": "/card",
+            "name": "Card 卡片"
+          },
+          {
+            "path": "/ranking",
+            "name": "Ranking 排行榜"
+          }
+        ]
+      },
+      {
+        "groupName": "Charts",
+        "list": [
+          {
+            "path": "/barChart",
+            "name": "Bar 柱状图",
+            "isComplete": true
+          },
+          {
+            "path": "/pictorialBarChart",
+            "name": "PictorialBarChart 象形柱图",
+            "isComplete": true
+          },
+          {
+            "path": "/pieChart",
+            "name": "PieChart 饼图",
+            "isComplete": true
+          },
+          {
+            "path": "/lineChart",
+            "name": "LineChart 折线图",
+            "isComplete": true
+          },
+          {
+            "path": "/radarChart",
+            "name": "RadarChart 雷达图",
+            "isComplete": true
+          },
+          {
+            "path": "/lineBarChart",
+            "name": "LineBarChart 组合图表",
+            "isComplete": true
+          }
+        ]
+      }
+    ]
+  }
+]

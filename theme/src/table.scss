@@ -1,0 +1,133 @@
+@import "mixins/mixins";
+@import "./var/var";
+
+@include b(table) {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: fit-content;
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  font-size: 14px;
+  color: $--table-font-color;
+  border: $--table-border;
+
+  // 数据为空
+  @include e(empty-block) {
+    min-height: 60px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include e(empty-text) {
+    line-height: 60px;
+    width: 50%;
+    color: $--color-text-secondary;
+  }
+
+  thead {
+    color: $--table-header-font-color;
+    font-weight: 500;
+  }
+
+  th,
+  td {
+    padding: 12px 0;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+
+    @include when(center) {
+      text-align: center;
+    }
+
+    @include when(right) {
+      text-align: right;
+    }
+
+    &.is-hidden {
+      > * {
+        visibility: hidden;
+      }
+    }
+  }
+
+  tr {
+    background-color: transparent;
+  }
+
+  th {
+    overflow: hidden;
+    user-select: none;
+    background-color: $--table-header-background-color;
+
+    > .cell {
+      display: inline-block;
+      box-sizing: border-box;
+      position: relative;
+      vertical-align: middle;
+      width: 100%;
+
+      &.highlight {
+        color: $--color-primary;
+      }
+    }
+  }
+
+  td {
+    div {
+      box-sizing: border-box;
+    }
+  }
+
+  .cell {
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 23px;
+    padding-left: 10px;
+    padding-right: 10px;
+    &.cell-ellipsis {
+      white-space: nowrap;
+      min-width: 50px;
+    }
+  }
+
+  @include e((header-wrapper, body-wrapper)) {
+    width: 100%;
+  }
+
+  @include e((header, body)) {
+    table-layout: fixed;
+    border-collapse: separate;
+  }
+
+  @include e(header-wrapper) {
+    overflow: hidden;
+
+    & tbody td {
+      background-color: $--table-row-hover-background-color;
+      color: $--table-font-color;
+    }
+  }
+
+  @include e(body-wrapper) {
+    overflow: hidden;
+    position: relative;
+  }
+
+  & tr.#{$namespace}-table__row--striped {
+    td {
+      background: #001114;
+    }
+  }
+}

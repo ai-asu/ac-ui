@@ -1,0 +1,41 @@
+ul.demo-color {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px;
+  background-color: #081113;
+  margin: 0;
+  li {
+    color: #ffffff;
+    margin-right: 40px;
+    width: 60px;
+
+    div {
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    &.name {
+      div {
+        min-width: 60px;
+        width: auto;
+      }
+    }
+
+    p {
+      color: #ffffff;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}
+
+.demo-color + .demo-color {
+  padding-top: 0;
+}
+
+.ac-bgColor {
+  width: 60px;
+  height: 30px;
+  margin-top: 20px;
+}
